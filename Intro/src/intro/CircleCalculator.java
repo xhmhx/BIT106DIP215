@@ -21,11 +21,11 @@ public class CircleCalculator {
         double area = PI * radius * radius;
         double circumference = 2 * PI * radius;
         
-        System.out.println("For a circle with radius ");
+         System.out.print("For a circle with radius ");
         System.out.println(radius);
-        System.out.println("THe circumference is ");
+        System.out.print("THe circumference is ");
         System.out.println(circumference);
-        System.out.println("And the area is ");
+        System.out.print("And the area is ");
         System.out.println(area);
     }
 }
