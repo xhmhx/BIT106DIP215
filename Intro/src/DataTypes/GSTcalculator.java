@@ -34,8 +34,10 @@ public class GSTcalculator {
         
         double totalToPay = subTotal + GST;
         
-        System.out.println("GST : RM" + GST  + "(" + (GSTRATE*100) + "%)");
-        System.out.println("Please pay RM" + totalToPay);
+        //System.out.println("GST : RM" + GST  + "(" + (GSTRATE*100) + "%)");
+        //System.out.println("Please pay RM" + totalToPay);
+        System.out.printf("GST : RM%5.2f (%3.1f%s)\n",GST,(GSTRATE*100),"%");
+        System.out.printf("Please pay RM%-10.2f\n", totalToPay);
         
     }
 }
