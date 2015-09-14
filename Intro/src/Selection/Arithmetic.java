@@ -23,53 +23,64 @@ public class Arithmetic {
     {
         Scanner sc = new Scanner(System.in);
         
-        System.out.print("Enter first integer :");
-        int num1 = sc.nextInt();
-        System.out.print("Enter 2nd integer :");
-        int num2 = sc.nextInt();
         
-        boolean isValidOperation;
-        do {   
-            System.out.println("Would you like to: ");
-            System.out.println("+: Add the numbers");
-            System.out.println("-: Subtract second from first");
-            System.out.println("*: Find the product");
-            System.out.println("/: Find the quotient");
-            System.out.println("%: Find the remainder");
-            System.out.println("^: First number to the power of second");
+        char calculate = 'y';
+        
+        while (calculate == 'y') 
+        {
+            System.out.print("Enter first integer :");
+            int num1 = sc.nextInt();
+            System.out.print("Enter 2nd integer :");
+            int num2 = sc.nextInt();
 
-            System.out.print("Enter the operation :");
-            char op = sc.next().charAt(0);
+            boolean isValidOperation;
+            do {   
+                System.out.println("Would you like to: ");
+                System.out.println("+: Add the numbers");
+                System.out.println("-: Subtract second from first");
+                System.out.println("*: Find the product");
+                System.out.println("/: Find the quotient");
+                System.out.println("%: Find the remainder");
+                System.out.println("^: First number to the power of second");
 
-            int ans =0;
+                System.out.print("Enter the operation :");
+                char op = sc.next().charAt(0);
 
-            // a flag to check if the operation is valid
-            isValidOperation = true;
+                int ans =0;
 
-            // use switch to perform the required operation
-            switch (op)
-            {
-                case '+': ans = num1 + num2; break;
-                case '-': ans = num1 - num2; break;
-                case '*': ans = num1 * num2; break;
-                case '/': ans = num1 / num2; break;
-                case '%': ans = num1 % num2; break;
-                case '^': ans = (int) Math.pow(num1, num2); break;
-                default: 
-                    System.out.println("Invalid operation");
-                    isValidOperation = false;
-            }
+                // a flag to check if the operation is valid
+                isValidOperation = true;
 
-            // if the operation is invalid, don't print the answer
-            if (isValidOperation)
-                System.out.printf("%d %s %d = %d\n", num1, op, num2, ans);
-            else
-            {
-                System.out.println("Please re-enter operation :");
-            }
-    } while (isValidOperation == false);
-    
-        System.out.println("Thank you for your cooperation");
+                // use switch to perform the required operation
+                switch (op)
+                {
+                    case '+': ans = num1 + num2; break;
+                    case '-': ans = num1 - num2; break;
+                    case '*': ans = num1 * num2; break;
+                    case '/': ans = num1 / num2; break;
+                    case '%': ans = num1 % num2; break;
+                    case '^': ans = (int) Math.pow(num1, num2); break;
+                    default: 
+                        System.out.println("Invalid operation");
+                        isValidOperation = false;
+                }
+
+                // if the operation is invalid, don't print the answer
+                if (isValidOperation)
+                    System.out.printf("%d %s %d = %d\n", num1, op, num2, ans);
+                else
+                {
+                    System.out.println("Please re-enter operation :");
+                }
+            } while (isValidOperation == false);    // do while loop
+
+            System.out.println("Thank you for your cooperation");
+            System.out.println("Would you like to calculate another 2 numbers?");
+            System.out.print("Enter y or n :");
+            calculate = sc.next().charAt(0);
+        } // end of the while loop for calculating again
+        
+        System.out.println("Goodbye");
     }
     
 }
