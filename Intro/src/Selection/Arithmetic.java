@@ -28,38 +28,48 @@ public class Arithmetic {
         System.out.print("Enter 2nd integer :");
         int num2 = sc.nextInt();
         
-        System.out.println("Would you like to: ");
-        System.out.println("+: Add the numbers");
-        System.out.println("-: Subtract second from first");
-        System.out.println("*: Find the product");
-        System.out.println("/: Find the quotient");
-        System.out.println("%: Find the remainder");
-        System.out.println("^: First number to the power of second");
-        System.out.print("Enter the operation :");
-        char op = sc.next().charAt(0);
-        
-        int ans =0;
-        
-        // a flag to check if the operation is valid
-        boolean isValidOperation = true;
-        
-        
-        // use switch to perform the required operation
-        switch (op)
-        {
-            case '+': ans = num1 + num2; break;
-            case '-': ans = num1 - num2; break;
-            case '*': ans = num1 * num2; break;
-            case '/': ans = num1 / num2; break;
-            case '%': ans = num1 % num2; break;
-            case '^': ans = (int) Math.pow(num1, num2); break;
-            default: 
-                System.out.println("Invalid operation");
-                isValidOperation = false;
-        }
-        
-        // if the operation is invalid, don't print the answer
-        if (isValidOperation)
-            System.out.printf("%d %s %d = %d\n", num1, op, num2, ans);
+        boolean isValidOperation;
+        do {   
+            System.out.println("Would you like to: ");
+            System.out.println("+: Add the numbers");
+            System.out.println("-: Subtract second from first");
+            System.out.println("*: Find the product");
+            System.out.println("/: Find the quotient");
+            System.out.println("%: Find the remainder");
+            System.out.println("^: First number to the power of second");
+
+            System.out.print("Enter the operation :");
+            char op = sc.next().charAt(0);
+
+            int ans =0;
+
+            // a flag to check if the operation is valid
+            isValidOperation = true;
+
+            // use switch to perform the required operation
+            switch (op)
+            {
+                case '+': ans = num1 + num2; break;
+                case '-': ans = num1 - num2; break;
+                case '*': ans = num1 * num2; break;
+                case '/': ans = num1 / num2; break;
+                case '%': ans = num1 % num2; break;
+                case '^': ans = (int) Math.pow(num1, num2); break;
+                default: 
+                    System.out.println("Invalid operation");
+                    isValidOperation = false;
+            }
+
+            // if the operation is invalid, don't print the answer
+            if (isValidOperation)
+                System.out.printf("%d %s %d = %d\n", num1, op, num2, ans);
+            else
+            {
+                System.out.println("Please re-enter operation :");
+            }
+    } while (isValidOperation == false);
+    
+        System.out.println("Thank you for your cooperation");
     }
+    
 }
