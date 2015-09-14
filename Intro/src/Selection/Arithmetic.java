@@ -40,18 +40,28 @@ public class Arithmetic {
         
         int ans =0;
         
+        // a flag to check if the operation is valid
+        boolean isValidOperation = true;
+        
+        
         // use switch to perform the required operation
         switch (op)
         {
-            case '+': ans = num1 + num2; break;
+            case '+': 
+                ans = num1 + num2; 
+                break;
             case '-': ans = num1 - num2; break;
             case '*': ans = num1 * num2; break;
             case '/': ans = num1 / num2; break;
             case '%': ans = num1 % num2; break;
             case '^': ans = (int) Math.pow(num1, num2); break;
+            default: 
+                System.out.println("Invalid operation");
+                isValidOperation = false;
         }
-        System.out.println("The answer is " + ans);
         
-        
+        // if the operation is invalid, don't print the answer
+        if (isValidOperation)
+            System.out.println("The answer is " + ans);
     }
 }
