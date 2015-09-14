@@ -47,9 +47,7 @@ public class Arithmetic {
         // use switch to perform the required operation
         switch (op)
         {
-            case '+': 
-                ans = num1 + num2; 
-                break;
+            case '+': ans = num1 + num2; break;
             case '-': ans = num1 - num2; break;
             case '*': ans = num1 * num2; break;
             case '/': ans = num1 / num2; break;
@@ -62,6 +60,6 @@ public class Arithmetic {
         
         // if the operation is invalid, don't print the answer
         if (isValidOperation)
-            System.out.println("The answer is " + ans);
+            System.out.printf("%d %s %d = %d\n", num1, op, num2, ans);
     }
 }
